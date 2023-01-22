@@ -1,0 +1,25 @@
+body{
+   align-items:center;
+   justify-content:center;
+   display:flex;
+   height:90vh;
+   width:95%;
+   background-color:#e9d6d6;
+}
+div{
+   background-color:black;
+   height:200px;
+   width:200px;
+   border:15px solid white;
+   align-items:center;
+   justify-content:center;
+   display:flex;
+   font-size:2rem;
+   color:white;
+   padding-left:5rem;
+   padding-right:5rem;
+   font-size:3rem;
+}
+#clocks{
+
+   }
