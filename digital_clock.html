@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-eqiv="X-UA-compatible" content="IE=Rdge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>digital_clock</title>
+	<link rel="stylesheet" href="digital_clock.css">
+</head>
+<body>
+
+  <div id="clocks"></div>   
+
+
+</body>
+
+		<script>
+		   function time(){
+			let date=new Date();
+			let H=date.getHours();
+			let m=date.getMinutes();
+			let s=date.getSeconds();
+			let session="am";
+		  
+			H=(H<10)?"0"+H:H;
+			m=(m<10)?"0"+m:m;
+			s=(s<10)?"0"+s:s;
+			
+			if(H==0){
+			   H==12;
+			}
+			if(H>12){
+			  H=H-12;
+			  session="pm"
+			}
+			let tym=H+":" +""+m+":" +""+s+""+session;
+			document.getElementById("clocks").innerText=tym;
+			setTimeout(time,1000)
+			}
+			time();
+			
+		</script>
+
+
+
+</html>
