@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock</title>
+	<link rel="stylesheet" href="digital_clock.css">
+</head>
+<body>
+    <div class="digital">
+	    <div class="container">
+		    <div class="clock">
+			    <div class="border">
+				    <div class="first">
+                        <div class="date">
+							<h2>DATE</h2>
+							<h1 id="date"></h1>
+					    </div>
+						<div class="month">
+							<h2>MONTH</h2>
+							<h1 id="month"></h1>
+						</div>
+						<div class="year">
+							<h2>YEAR</h2>
+							<h1 id="year"></h1>
+						</div>
+					</div>
+					<div class="second">
+						 <div class="hour">
+						    <h2>HOUR</h2>
+							<h1 id="hour"></h1>
+						</div>
+						<div class="minute">
+							<h2>MINUTE</h2>
+							<h1 id="min"></h1>
+						</div>
+						<div class="seco">
+						    <h2>SECOND</h2>
+							<h1 id="sec"></h1>
+						</div>
+					
+					</div>
+					<div class="third">
+					    <div class="sun">
+						    <div class="sun-radius">
+							    <div class="red"  id="sun"></div>
+							</div>
+						    <h4>S</h4>
+						</div>
+						<div class="sun">
+						 <div class="sun-radius" >
+							<div class="red"  id="mon"></div>
+							</div>
+						    <h4>M</h4>
+						</div>
+						<div class="sun">
+						    <div class="sun-radius" >
+							<div class="red" id="tues"></div>
+							</div>
+						     <h4>T</h4>
+						</div>
+						<div class="sun">
+						    <div class="sun-radius" >
+							<div class="red"  id="wed"></div>
+							</div>
+						     <h4>W</h4>
+						</div>
+						<div class="sun">
+						    <div class="sun-radius" >
+							<div class="red"  id="thurs"></div>
+							</div>
+						     <h4>T</h4>
+						</div>
+						<div class="sun">
+						    <div class="sun-radius" >
+							  <div class="red"  id="fri"></div>
+							</div>
+						     <h4>F</h4>
+						</div>
+						<div class="sun">
+						    <div class="sun-radius" >
+							<div class="red" id="sat" ></div>
+							</div>
+						     <h4>S</h4>
+						</div>
+						
+					
+					</div>
+					<div class="four">
+					     <div class="sun">
+						    <div class="sun-radius" >
+							<div class="red" id="mor"></div>
+							</div>
+						     <h4>AM</h4>
+						</div>
+						<div class="sun">
+						    <div class="sun-radius" >
+							    <div class="red" id="eve"></div>
+							</div>
+						     <h4>PM</h4>
+						</div>
+					
+					
+					
+					</div>
+		        </div>
+		    </div>
+		</div>
+	
+	
+	
+	</div>
+
+<script>
+   function print(){
+	function date(){
+	var now=new Date();
+	var todate=now.getDate();
+	
+	var printdate=document.getElementById("date")
+	printdate.innerText=todate;
+}
+date()
+
+function month(){
+	var now=new Date();
+	var tomonth=now.getMonth();
+	var printmonth=document.getElementById("month")
+	printmonth.innerText="0"+(1+tomonth)
+}
+month()
+
+function year(){
+	var now= new Date();
+	var toyear=now.getFullYear();
+	var printyear=document.getElementById("year");
+	printyear.innerText=toyear
+}
+year()
+	function hour(){
+		var now=new Date();
+		var tohour= now.getHours();
+		var printhour=document.getElementById("hour")
+		printhour.innerText=tohour
+	}
+	hour()
+
+
+	function min(){
+		var now=new Date();
+		var tomin= now.getMinutes();
+		var printmin=document.getElementById("min")
+		printmin.innerText=tomin
+	}
+	min()
+
+
+	function second(){
+		var now=new Date();
+		var tosec= now.getSeconds();
+		var printsec=document.getElementById("sec")
+		printsec.innerText=tosec
+	}
+	second()
+	function meridian(){
+	var now=new Date();
+	var am=now.getHours();
+	var morning=document.getElementById("mor")
+	var evening=document.getElementById("eve")
+	
+	if(am<=12){
+		morning.style.backgroundColor="red"
+	}
+	else{
+		evening.style.backgroundColor="red"
+	}
+}
+meridian()
+
+function week(){
+	var now=new Date();
+	var sun=now.getDay();
+	
+	
+	if(sun==0){
+		var color=document.getElementById("sun")
+		color.style.backgroundColor="red"
+	}
+	else if(sun==1){
+		var color1=document.getElementById("mon")
+		color1.style.backgroundColor="red"
+	}
+	else if(sun==2){
+		var color2=document.getElementById("tues")
+		color2.style.backgroundColor="red"
+	}
+	else if(sun==3){
+		var color3=document.getElementById("wed")
+		color3.style.backgroundColor="red"
+	}
+	else if(sun==4){
+		var color4=document.getElementById("thurs")
+		color4.style.backgroundColor="red"
+	}
+	else if(sun==5){
+		var color5=document.getElementById("fri")
+		color5.style.backgroundColor="red"
+	}
+	else if(sun==6){
+		var color6=document.getElementById("sat")
+		color6.style.backgroundColor="red"
+	}
+	
+}
+week()
+}
+setInterval(print,1000)
+</script>
+</body>
+</html>
